@@ -1,3 +1,10 @@
+:root {
+    --darkCyan: hsl(185, 75%, 39%);
+    --veryDarkDesaturatedblue: hsl(229, 23%, 23%);
+    --darkGrayishBlue: hsl(227, 10%, 46%);
+    --darkGray: hsl(0, 0%, 59%);
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -7,23 +14,78 @@ body {
     font-family: 'Kumbh Sans';
     background: url(../images/bg-pattern-top.svg)  no-repeat,
                 url(../images/bg-pattern-bottom.svg)  no-repeat;
-    background-color: hsl(185, 75%, 39%);
+    background-color: var(--darkCyan);
     background-position: top -600px right 650px, bottom -600px left 650px;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-width: 300px;
-    min-height: 500px;
-    border-radius: 5px;
+    display: block;
+    width: 350px;
+    border-radius: 10px;
     overflow: hidden;
+    background-color: white;
 }
 
+.container__header {
+    position: relative;
+}
 
-@media (max-width: 960px) {
+.container__info {
+    width: inherit;
+    margin: 70px 0 25px 0;
+    text-align: center;
+}
+
+.container__info-name {
+    color: var(--veryDarkDesaturatedblue);
+}
+
+.container__info-Age {
+    display: inline-block;
+    color: var(--darkGray);
+}
+
+.container__info-city {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--darkGray);
+}
+
+.container__photo {
+    position: absolute;
+    top: 85px;
+    right: 120px;
+}
+
+.container__photo img {
+    border-radius: 200px;
+    border: solid 5px white;
+}
+
+.container__social {
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    justify-content: center;
+    padding: 25px 0 20px 0;
+    border-top: solid 1px rgb(180, 180, 180);
+}
+
+.social__box {
+    margin: auto;
+    text-align: center;
+    color: var(--veryDarkDesaturatedblue);
+}
+
+.social__box p {
+    margin-top: 5px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--darkGrayishBlue);
+}
+
+@media (max-width: 375px) {
     body {
-        width:370px;
+        background-position: top -600px right 150px, bottom -600px left 150px;
     }
 }
